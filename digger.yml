@@ -1,9 +1,39 @@
 generate_projects:
-  terragrunt_parsing:
-    parallel: true
-    createProjectName: true
-    createWorkspace: true
-    defaultWorkflow: default
+  blocks:
+    # digger digger plan -b aws-dev
+    aws-dev:
+      terragrunt: true
+      rootDir: "aws/dev"
+      parallel: true
+      createProjectName: true
+      createWorkspace: true
+      defaultWorkflow: default
+      
+    aws-prod:
+      terragrunt: true
+      rootDir: "aws/prod"
+      parallel: true
+      createProjectName: true
+      createWorkspace: true
+      defaultWorkflow: default
+
+    pagerduty-dev:
+      terragrunt: true
+      rootDir: "pagerduty/dev"
+      parallel: true
+      createProjectName: true
+      createWorkspace: true
+      defaultWorkflow: default
+
+    pagerduty-prod:
+      terragrunt: true
+      rootDir: "pagerduty/prod"
+      parallel: true
+      createProjectName: true
+      createWorkspace: true
+      defaultWorkflow: default
+
+      
 workflows:
   default:
     plan:
